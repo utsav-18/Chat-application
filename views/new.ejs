@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Chat</title>
+      <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h3 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px 30px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    form:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    input, textarea {
+      width: 94.5%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #f9fbfd;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      background: #007bff;
+      color: white;
+      padding: 12px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #0056d2;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <h3>New Chat</h3>
+
+   <!-- sends new chat data to the server  -->
+
+    <form action="/chats" method="POST">
+      <input placeholder="Who are you?" name="from" /><br>
+      <textarea name="msg" placeholder="Write Your message here"></textarea><br>
+      <input placeholder="Add Receiver" name="to" /><br>
+      <button>Create Chat</button>
+    </form>
+    
+</body>
+</html>

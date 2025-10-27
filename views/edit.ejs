@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit your chat</title>
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .edit-box {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .edit-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 15px;
+      color: #555;
+    }
+
+    b {
+      color: #007bff;
+    }
+
+    textarea {
+      width: 100%;
+      background: #e8f0fe;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      font-family: "Poppins", sans-serif;
+      font-size: 15px;
+      resize: none;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+    }
+
+    button {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #0056d2;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .edit-box {
+        padding: 20px;
+      }
+
+      textarea {
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="edit-box">
+    <p>Edit Your Chat: <%= chat._id %></p>
+    <p>This chat was sent from <b><%= chat.from %></b> to <b><%= chat.to %></b></p>
+    <br>
+
+    <!--  Edit Chat Form: allows user to update existing chat message -->
+    <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+      <!--  Textarea: user edits message content -->
+      <textarea name="msg" rows="6" cols="25"><%= chat.msg %></textarea>
+      <br>
+      <button>Edit</button>
+    </form>
+  </div>
+
+</body>
+</html>
