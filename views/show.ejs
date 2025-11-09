@@ -94,7 +94,6 @@
       }
     }
   </style>
-
 </head>
 <body>
 
@@ -103,14 +102,9 @@
     <p>This chat was sent from <b><%= chat.from %></b> to <b><%= chat.to %></b></p>
     <br>
 
-    <!--  Edit Chat Form: allows user to update existing chat message -->
-    <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
-      <!--  Textarea: user edits message content -->
-      <textarea name="msg" rows="6" cols="25"><%= chat.msg %></textarea>
+     <b><p><%= chat.msg %></p></b> 
       <br>
-      <button>Save</button>
-    </form>
-  </div>
+    <button onclick="window.location.href='/chats'">Go Back</button>  </div>
 
 </body>
 </html>

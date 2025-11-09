@@ -11,8 +11,12 @@ main()
     console.log(err);
 });
 
+// async function main() {
+//   await mongoose.connect('mongodb://127.0.0.1:27017/ChattingApp');
+// }
+
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/ChattingApp');
+  await mongoose.connect('mongodb://127.0.0.1:27017/fakeChattingApp');
 }
 
 
